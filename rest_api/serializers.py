@@ -1,5 +1,15 @@
 from rest_framework import serializers
-from .models import Trade
+from .models import User, Trade
+
+class UserSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = User
+        fields = {
+            'id',
+            'name',
+            'position',
+        }
 
 class TradeSerializer(serializers.ModelSerializer):
 
