@@ -12,11 +12,8 @@ router.register('trades',TradeViewSet)
 
 urlpatterns = [
     path('users/', UserViewSet.as_view({'get':'list'}), name='users'),
-    # path('cursos/<int:pk>/', CursoAPIView.as_view(), name='curso'),
-    # path('cursos/<int:curso_pk>/avaliacoes/', AvaliacoesAPIView.as_view(), name='curso_avaliacoes'),
-    # path('cursos/<int:curso_pk>/avaliacoes/<int:avaliacao_pk>/', AvaliacaoAPIView.as_view(), name='curso_avaliacao'),
 
     path('trades/', TradeViewSet.as_view({'get':'list'}), name='trades'),
-    # path('avaliacoes/<int:avaliacao_pk>/', AvaliacaoAPIView.as_view(), name='avaliacao'),
+    path('trade/<int:pk>/', TradeViewSet.as_view({'get':'list'}), name='trade'),
 
 ]
