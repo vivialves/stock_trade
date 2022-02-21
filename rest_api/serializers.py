@@ -5,23 +5,23 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = {
+        fields = (
             'id',
             'name',
             'position',
-        }
+        )
 
 class TradeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Trade
-        fields = {
+        fields = (
             'id',
             'type',
             'user_id',
             'symbol',
             'shares',
             'price',
-            'timestamp',
-        }
+            'timestamp_create',
+        )
 

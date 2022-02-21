@@ -233,3 +233,6 @@ node_modules/
 
 # Ignore settings because thee secret key
 settings.py
+
+# Ignore vscode files
+.vscode/*
