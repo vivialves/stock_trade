@@ -3,17 +3,20 @@ from django.urls import path
 from rest_framework.routers import SimpleRouter
 
 from .views import (
-    UserViewSet,
-    TradeViewSet)
+    UserAPIView,
+    UsersAPIView,
+    TradeAPIView,
+    TradesAPIView)
 
 router = SimpleRouter()
-router.register('users', UserViewSet)
-router.register('trades',TradeViewSet)
+router.register('users', UserAPIView)
+router.register('trades', TradeAPIView)
 
 urlpatterns = [
-    path('users/', UserViewSet.as_view({'get':'list'}), name='users'),
+    path('users/', UsersAPIView.as_view(), name='users'),
+    path('user/<int:pk>/', UserAPIView.as_view(), name='trade'),
 
-    path('trades/', TradeViewSet.as_view({'get':'list'}), name='trades'),
-    path('trade/<int:pk>/', TradeViewSet.as_view({'get':'list'}), name='trade'),
+    path('trades/', TradesAPIView.as_view(), name='trades'),
+    path('trade/<int:pk>/', TradeAPIView.as_view(), name='trade'),
 
 ]
