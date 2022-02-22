@@ -232,7 +232,7 @@ pickle-email-*.html
 node_modules/
 
 # Ignore settings because thee secret key
-settings.py
+settings__.py
 
 # Ignore vscode files
 .vscode/*
